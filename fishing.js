@@ -356,6 +356,39 @@ var Fishing = Fishing || (function() {
         }
     ];
 
+	const subcommands = {
+        cast: {
+            description: `fish cast [characterId] [location] -> fishes`,
+            name: 'cast',
+            command: printhelp
+        },
+        help: {
+            description: `fish help -> this message`,
+            name: 'help'
+        },
+        bonus: {
+            description: `fish setbonus [characterId] [bonus] -> alter a character's bonus to a fishing roll`,
+            name: 'setbonus'
+        },
+        goto: {
+            description: `fish goto [location] -> sets fishing location type to that location`,
+            name: 'goto'
+        },
+        getlocales: {
+            description: `fish locations -> gives location options`,
+            name: 'locations'
+        },
+        getrecords: {
+            description: `fish records [characterId] -> returns all fishing records for that character`,
+            name: 'records'
+        },
+        getparty: {
+            description: `fish party -> gets list of party members`,
+            name: 'party'
+
+        }
+    };
+
     const makeCharacter = (characterId) => {
         const new_char = {
             name: characterId,
@@ -499,39 +532,6 @@ var Fishing = Fishing || (function() {
         const command = args.shift().substring(1);
 
         if (command !== 'fish') return;
-
-        const subcommands = {
-            cast: {
-                description: `fish cast [characterId] [location] -> fishes`,
-                name: 'cast',
-                command: printhelp
-            },
-            help: {
-                description: `fish help -> this message`,
-                name: 'help'
-            },
-            bonus: {
-                description: `fish setbonus [characterId] [bonus] -> alter a character's bonus to a fishing roll`,
-                name: 'setbonus'
-            },
-            goto: {
-                description: `fish goto [location] -> sets fishing location type to that location`,
-                name: 'goto'
-            },
-            getlocales: {
-                description: `fish locations -> gives location options`,
-                name: 'locations'
-            },
-            getrecords: {
-                description: `fish records [characterId] -> returns all fishing records for that character`,
-                name: 'records'
-            },
-            getparty: {
-                description: `fish party -> gets list of party members`,
-                name: 'party'
-
-            }
-        };
 
         const subcommand = args.shift();
         const characterId = args.shift();
