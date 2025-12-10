@@ -13,7 +13,7 @@ var Fishing = Fishing || (function() {
 
     const locations = {
         any: "any",
-        surface: "hobbit surface",
+        hobbit_surface: "hobbit surface",
         underdark: "hobbit underdark"
     };
 
@@ -349,10 +349,41 @@ var Fishing = Fishing || (function() {
         {
             name: "Salmon",
             description: "A strong swimmer with pink flesh.",
-            locale: locations.surface,
+            locale: locations.hobbit_surface,
             max_size: 15,
             min_size: 5,
             weight: 60
+        },
+        {
+            name: "Guppy Boy",
+            description: "A small, fatty fish that is very common on the hobbit world.",
+            locale: locations.hobbit_surface,
+            max_size: 3,
+            min_size: 1,
+            weight: 300
+        },
+        {
+            name: "Aphrodisiac Angler Fish",
+            description: "A biolunimescent fish that is rumored to have aphrodisiac properties.",
+            locale: locations.underdark,
+            max_size: 100,
+            min_size: 20,
+            weight: 40},
+        {
+            name: "Cave Catfish",
+            description: "It's got whiskers and it hunts the mousefish.",
+            locale: locations.underdark,
+            max_size: 30,
+            min_size: 10,
+            weight: 80
+        },
+        {
+            name: "Mousefish",
+            description: "A tiny fish that is prey for the cave catfish.",
+            locale: locations.underdark,
+            max_size: 5,
+            min_size: 1,
+            weight: 200
         }
     ];
 
@@ -562,14 +593,14 @@ var Fishing = Fishing || (function() {
             log("initializing fishing database");
             state.Fishing = {
                 Party: {},
-                locale: locations.surface,
+                locale: locations.hobbit_surface,
             };
         };
         if (!state.Fishing.Party) {
             state.Fishing.Party = {};
         };
         if (!state.Fishing.locale) {
-            state.Fishing.locale = locations.surface;
+            state.Fishing.locale = locations.hobbit_surface;
         };
     };
 
